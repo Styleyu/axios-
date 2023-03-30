@@ -13,3 +13,28 @@
     默认使用的是get方式进行请求
 
 三、axiso 带参的get请求和post请求
+
+四、axios在vue中的模块封装
+方式一：
+
+封装方
+
+import axios from 'axios'
+export function request(config,success,fail){
+    axios({
+        url:config,
+    }).then(res=>{
+        success(res);
+    }).catch(err=>{
+        fail(err);
+    })
+}
+
+调用方
+
+import {request} from './network/request/request'
+request('https://jsonplaceholder.typicode.com/posts',res=>{
+     console.log(res)
+},err=>{
+     console.log(err)
+})
