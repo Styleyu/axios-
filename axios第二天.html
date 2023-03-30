@@ -11,10 +11,13 @@
 
     <script>
         axios({
-            url:'https://jsonplaceholder.typicode.com/todos/1?id=2',
-            methods: 'post',
+            url:'https://jsonplaceholder.typicode.com/posts',
+            params:{
+                id:1,
+            },
+            methods:'post'
         }).then(res=>{
-             console.log(res);
+             console.log(res)
         })
     </script>
 </body>
